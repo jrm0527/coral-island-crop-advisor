@@ -30,7 +30,6 @@ app.get("/api/crops", async (req, res, next) => {
     res.send(rows);
     client.end();
   } catch (err) {
-    console.log(err.status);
     next({ status: err.status, message: err.message });
   }
 });
@@ -79,6 +78,21 @@ app.post("/api/crops", async (req, res, next) => {
     res.send(rows);
   }
   client.end();
+});
+
+app.delete("/api/crops/:cropIndex", async function (req, res, next) {
+  let index = req.params.cropIndex;
+  const query = {
+    text: "DELETE FROM crop WHERE id = $1 RETURNING *",
+    values: [index],
+  };
+  const client = new Client(process.env.DATABASE_URL);
+  await client.connect();
+  client.query(query, (error, result) => {
+    console.log(error ? error.stack : result.rows);
+    res.json(result.rows);
+    client.end;
+  });
 });
 
 app.use((req, res, next) => {
