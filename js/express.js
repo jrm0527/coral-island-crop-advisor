@@ -30,7 +30,25 @@ app.get("/api/crops", async (req, res, next) => {
     res.send(rows);
     client.end();
   } catch (err) {
+    console.log(err.status);
     next({ status: err.status, message: err.message });
+  }
+});
+
+app.get("/api/crops/:cropSeason", async (req, res, next) => {
+  let cropSeason = req.params.cropSeason;
+  try {
+    const client = new Client(process.env.DATABASE_URL);
+    client.connect();
+    const { rows } = await client.query(
+      `SELECT * FROM crop WHERE season = '${cropSeason}'`
+    );
+    console.log(rows);
+    res.send(rows);
+    client.end();
+  } catch (err) {
+    console.log(err);
+    next({ status: 500, message: err.message });
   }
 });
 

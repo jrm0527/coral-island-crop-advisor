@@ -1,2 +1,5 @@
 ###
 GET http://localhost:8000/api/crops
+
+###
+GET http://localhost:8000/api/crops/spring
