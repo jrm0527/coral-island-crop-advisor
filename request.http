@@ -4,23 +4,14 @@ GET http://localhost:8000/api/crops
 ###
 GET http://localhost:8000/api/crops/spring
 
-### delete a pet
-DELETE http://localhost:8000/api/crops/1
-
-### patch a crop
-PATCH http://localhost:8000/api/crops/61
-Content-Type: application/json
-
-{
-    "seed_price": 40
-}
+### delete a crop
+DELETE http://localhost:8000/api/crops/62
 
 ### create a crop
 POST http://localhost:8000/api/crops/
 Content-Type: application/json
 
 {
-    "id": 1,
     "name": "Sugarcane",
     "growth_time": 5,
     "regrowth_time": 1,
@@ -28,3 +19,17 @@ Content-Type: application/json
     "sell_price": 20,
     "season": "spring"
 }
+
+### update a crop
+PUT http://localhost:8000/api/crops/61
+Content-Type: application/json
+
+{
+    "name": "Sugarcane",
+    "growth_time": 5,
+    "regrowth_time": 1,
+    "seed_price": 50,
+    "sell_price": 20,
+    "season": "spring"
+}
+
