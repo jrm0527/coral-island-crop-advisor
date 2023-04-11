@@ -24,14 +24,9 @@ const port = process.env.PORT || 8000;
 
 app.get("/api/crops", async (req, res, next) => {
   try {
-    // const client = new Client(process.env.DATABASE_URL);
     const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-    // client.connect();
-    // const { rows } = await client.query("SELECT * FROM crop");
-    const { rows } = await pool.query("SELECT * FROM crop");
-    console.log(rows);
+    const { rows } = await pool.query("SELECT * FROM crop ORDER BY id ASC");
     res.send(rows);
-    // client.end();
     pool.end();
   } catch (err) {
     next({ status: err.status, message: err.message });
@@ -41,18 +36,11 @@ app.get("/api/crops", async (req, res, next) => {
 app.get("/api/crops/:cropSeason", async (req, res, next) => {
   let cropSeason = req.params.cropSeason;
   try {
-    // const client = new Client(process.env.DATABASE_URL);
     const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-    // client.connect();
-    // const { rows } = await client.query(
-    //   `SELECT * FROM crop WHERE season = '${cropSeason}'`
-    // );
     const { rows } = await pool.query(
       `SELECT * FROM crop WHERE season = '${cropSeason}'`
     );
-    console.log(rows);
     res.send(rows);
-    // client.end();
     pool.end();
   } catch (err) {
     next({ status: 500, message: err.message });
@@ -77,10 +65,7 @@ app.post("/api/crops", async (req, res, next) => {
     values: [cropName, growth, regrowth, regrowth_time, seed, sell, season],
   };
 
-  // const client = new Client(process.env.DATABASE_URL);
-  // client.connect();
   const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-  // const { rows } = await client.query(query);
   const { rows } = await pool.query(query);
   if (rows.length === 0) {
     next({ status: 400, message: "Bad Request" });
@@ -88,7 +73,6 @@ app.post("/api/crops", async (req, res, next) => {
     res.send(rows);
   }
   pool.end();
-  // client.end();
 });
 
 app.put("/api/crops/:cropId", async (req, res, next) => {
@@ -110,17 +94,13 @@ app.put("/api/crops/:cropId", async (req, res, next) => {
     values: [cropName, growth, regrowth, regrowth_time, seed, sell, season],
   };
 
-  // const client = new Client(process.env.DATABASE_URL);
-  // client.connect();
   const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-  // const { rows } = await client.query(query);
   const { rows } = await pool.query(query);
   if (rows.length === 0) {
     next({ status: 400, message: "Bad Request" });
   } else {
     res.send(rows);
   }
-  // client.end();
   pool.end();
 });
 
@@ -130,18 +110,10 @@ app.delete("/api/crops/:cropIndex", async function (req, res, next) {
     text: "DELETE FROM crop WHERE id = $1 RETURNING *",
     values: [index],
   };
-  // const client = new Client(process.env.DATABASE_URL);
-  // await client.connect();
   const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-  // client.query(query, (error, result) => {
-  //   console.log(error ? error.stack : result.rows);
-  //   res.json(result.rows);
-  //   client.end;
-  // });
   pool.query(query, (error, result) => {
     console.log(error ? error.stack : result.rows);
     res.json(result.rows);
-    // client.end;
     pool.end();
   });
 });
