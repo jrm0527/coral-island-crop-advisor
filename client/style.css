@@ -15,11 +15,31 @@
   width: 200px;
 }
 
-.page {
+#crop-page.hidden {
+  height: 0;
+  transform: translate(200%);
+}
+#calc-page.hidden {
+  height: 0;
+  transform: translate(-200%);
+}
+
+#crop-page {
   width: 900px;
+  height: auto;
   overflow: hidden;
   margin: 0 auto;
   border: 1px solid red;
+  transition-duration: 600ms;
+}
+
+#calc-page {
+  width: 900px;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 1px solid red;
+  transition-duration: 600ms;
 }
 
 .menu {
@@ -38,9 +58,16 @@
   width: 100%;
 }
 
-.content {
+#crop-content {
   float: right;
   width: 650px;
+  height: 500px;
+  background-color: #f5cf8e; /* Yellow */
+}
+
+#calc-content {
+  float: right;
+  width: 100%;
   height: 500px;
   background-color: #f5cf8e; /* Yellow */
 }
@@ -105,5 +132,67 @@ label {
 }
 
 .input-text {
-  width: 50%;
+  width: 60%;
+}
+
+#crop-content.hidden {
+  transform: translate(150%);
+}
+#crop-content {
+  transition-duration: 600ms;
+}
+
+#calc-content.hidden {
+  transform: translate(150%);
+}
+#calc-content {
+  transition-duration: 600ms;
+}
+
+/* Dropdown Button */
+.season-dropbtn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-list {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-list li {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-list li:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-list {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }

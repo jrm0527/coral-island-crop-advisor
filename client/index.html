@@ -9,18 +9,18 @@
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
-    <link
+    <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
-    />
+    /> -->
     <script defer src="app.js"></script>
-    <script
+    <!-- <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
     <link rel="stylesheet" href="style.css" />
     <title>CI: FARMER'S ALMANAC</title>
   </head>
@@ -35,33 +35,48 @@
       </div>
     </div>
     <div class="container">
-      <div class="page">
+      <div class="hidden" id="crop-page">
+        <!-- <div class="hidden" id="crop-content"> -->
+        <div class="sidebar">
+          <button class="sidebar-buttons" id="add-crop">Add Crop</button>
+          <button class="sidebar-buttons" id="update-crop">Update Crop</button>
+          <button class="sidebar-buttons" id="delete-crop">Delete Crop</button>
+          <button class="sidebar-buttons" id="next-crop">Next Crop</button>
+          <button class="sidebar-buttons" id="prev-crop">Previous Crop</button
+          ><button class="sidebar-buttons" id="clear-crop">Clear Crop</button>
+        </div>
         <div id="crop-content">
-          <div class="sidebar">
-            <button class="sidebar-buttons" id="add-crop">Add Crop</button>
-            <button class="sidebar-buttons" id="update-crop">
-              Update Crop
-            </button>
-            <button class="sidebar-buttons" id="delete-crop">
-              Delete Crop
-            </button>
-            <button class="sidebar-buttons" id="next-crop">Next Crop</button>
-            <button class="sidebar-buttons" id="prev-crop">Previous Crop</button
-            ><button class="sidebar-buttons" id="clear-crop">Clear Crop</button>
-          </div>
-          <div class="content">
-            <label for="cropName">Crop Name: </label>
-            <input type="text" class="input-text" id="cropName" />
-            <label for="growthTime">Growth Time: </label>
-            <input type="text" class="input-text" id="growthTime" />
-            <label for="regrowthTime">Regrowth Time: </label>
-            <input type="text" class="input-text" id="regrowthTime" />
-            <label for="seedPrice">Seed Price: </label>
-            <input type="text" class="input-text" id="seedPrice" />
-            <label for="sellPrice">Sell Price: </label>
-            <input type="text" class="input-text" id="sellPrice" />
-            <label for="season">Season: </label>
-            <input type="text" class="input-text" id="season" />
+          <label for="cropName">Crop Name: </label>
+          <input type="text" class="input-text" id="cropName" />
+          <label for="growthTime">Growth Time: </label>
+          <input type="text" class="input-text" id="growthTime" />
+          <label for="regrowthTime">Regrowth Time: </label>
+          <input type="text" class="input-text" id="regrowthTime" />
+          <label for="seedPrice">Seed Price: </label>
+          <input type="text" class="input-text" id="seedPrice" />
+          <label for="sellPrice">Sell Price: </label>
+          <input type="text" class="input-text" id="sellPrice" />
+          <label for="season">Season: </label>
+          <input type="text" class="input-text" id="season" />
+        </div>
+        <!-- </div> -->
+      </div>
+      <div id="calc-page">
+        <div id="calc-content">
+          <label for="seasons">Choose your current season:</label>
+          <select name="seasons" id="season-names">
+            <option value="spring">Spring</option>
+            <option value="summer">Summer</option>
+            <option value="fall">Fall</option>
+            <option value="winter">Winter</option>
+          </select>
+          <label for="input-day">Current Day: </label>
+          <input type="text" class="input-text" id="input-day" />
+          <button class="menu-buttons" id="run-calc">RUN</button>
+          <div class="container" id="table-container">
+            <table class="table">
+              <tbody class="text-center" id="item-table"></tbody>
+            </table>
           </div>
         </div>
       </div>
