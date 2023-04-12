@@ -1,56 +1,121 @@
-.container {
-  background-color: #eaedf0;
+body {
+  background-image: linear-gradient(#e5d7b2, #7c6b53);
+  height: 99vh;
+}
+
+.menu {
+  align-content: center;
+}
+
+#button-container {
+  text-align: center;
 }
 
 #buttons {
-  overflow: hidden;
   width: 50%;
   margin: 0 auto;
   padding-bottom: 20px;
 }
 
 .menu-buttons {
-  /* float: left; */
   height: 50px;
   width: 200px;
+  background-color: #04aa6d;
+  border-radius: 15px;
+  font-size: 18px;
+}
+
+.content-container {
+  height: 70%;
+}
+
+#calc-page.hidden {
+  height: 0;
+  transform: translate(-200%);
+}
+
+#calc-page {
+  width: 75%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  transition-duration: 600ms;
+}
+
+#calc-content {
+  float: right;
+  width: 100%;
+  height: 100%;
+  background-color: #f5cf8e; /* Yellow */
+}
+
+#calc-settings {
+  float: left;
+  padding-top: 2%;
+  padding-bottom: 22%;
+  text-align: center;
+  width: 25%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.calc-labels {
+  font-size: 24px;
+}
+
+#input-day {
+  width: 15%;
+  font-size: 20px;
+  text-align: center;
+}
+
+.table {
+  padding-top: 2%;
+  margin: 0 auto;
+}
+
+#item-table {
+  padding-top: 5%;
+  align-self: center;
+}
+
+.header-name {
+  width: 85%;
+  font-size: 28px;
+}
+
+.header-profit {
+  width: 30%;
+  font-size: 28px;
+}
+
+td {
+  font-size: 28px;
+  text-align: left;
+  border: 1px black solid;
+  background-color: #d2e3f3;
 }
 
 #crop-page.hidden {
   height: 0;
   transform: translate(200%);
 }
-#calc-page.hidden {
-  height: 0;
-  transform: translate(-200%);
-}
 
 #crop-page {
-  width: 900px;
-  height: auto;
+  width: 75%;
+  height: 100%;
   overflow: hidden;
   margin: 0 auto;
   border: 1px solid red;
   transition-duration: 600ms;
-}
-
-#calc-page {
-  width: 900px;
-  height: auto;
-  overflow: hidden;
-  margin: 0 auto;
-  border: 1px solid red;
-  transition-duration: 600ms;
-}
-
-.menu {
-  background-color: #b2d6ff; /* Medium blue */
 }
 
 .sidebar {
   float: left;
-  width: 200px;
-  height: 300px;
-  background-color: #f09a9d; /* Red */
+  width: 20%;
+  height: 100%;
+  align-items: center;
+  overflow: hidden;
 }
 
 .sidebar-buttons {
@@ -60,63 +125,35 @@
 
 #crop-content {
   float: right;
-  width: 650px;
-  height: 500px;
-  background-color: #f5cf8e; /* Yellow */
-}
-
-#calc-content {
-  float: right;
   width: 100%;
-  height: 500px;
+  height: 100%;
   background-color: #f5cf8e; /* Yellow */
 }
 
 .footer {
-  overflow: hidden;
-  background-color: #d6e9fe; /* Light blue */
+  height: 100%;
+  position: relative;
+  border: 1px solid green;
 }
 
-.column {
+.footer {
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  border: 1px solid orange;
+  /* background-color: #d6e9fe; */
+}
+
+/* .column {
   float: left;
   width: 31%;
   margin: 20px 1.15%;
   height: 160px;
-  background-color: #b2d6ff; /* Medium blue */
-}
+  background-color: #b2d6ff;
+} */
 
 .content {
   padding: 20px;
-}
-
-.article-image {
-  float: left;
-  width: 300px;
-  height: 200px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
-p {
-  margin-bottom: 20px;
-}
-
-.avatar {
-  float: left;
-  width: 60px;
-  height: 60px;
-  margin: 25px;
-  border-radius: 40px;
-  background-color: #d6e9fe;
-}
-
-.username {
-  margin-top: 30px;
-}
-
-.comment {
-  margin: 10px;
-  overflow: hidden; /* This is important */
 }
 
 #title-text {

@@ -6,7 +6,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import pg from "pg";
-const { Client } = pg;
 const { Pool } = pg;
 
 import cors from "cors";
@@ -29,7 +28,7 @@ app.get("/api/crops", async (req, res, next) => {
     res.send(rows);
     pool.end();
   } catch (err) {
-    next({ status: err.status, message: err.message });
+    next({ status: 400, message: err.message });
   }
 });
 
@@ -43,7 +42,7 @@ app.get("/api/crops/:cropSeason", async (req, res, next) => {
     res.send(rows);
     pool.end();
   } catch (err) {
-    next({ status: 500, message: err.message });
+    next({ status: 400, message: err.message });
   }
 });
 

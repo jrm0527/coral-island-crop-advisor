@@ -30,7 +30,7 @@ function calculateCrops() {
   const season = $("#season-names option:selected").text().toLowerCase();
   const day = $("#input-day").val();
   $("#item-table").empty();
-  $.get(`/api/crops/${season}`, (data) => {
+  $.get(`https://coral-island.onrender.com/api/crops/${season}`, (data) => {
     let profitObj = {};
     for (let i = 0; i < data.length; i++) {
       let crop = data[i];
@@ -64,6 +64,11 @@ function calculateCrops() {
     sortProfits.reverse().forEach(function (crop) {
       sortedProfits[crop[0]] = crop[1];
     });
+
+    const thName = $("<th>").addClass("header-name").text("Crop");
+    const thProfit = $("<th>").addClass("header-profit").text("Profit");
+    const tr = $("<tr>").append(thName, thProfit);
+    $("#item-table").append(tr);
 
     for (let crop in sortedProfits) {
       if (sortedProfits[crop] > 0) {
