@@ -27,7 +27,7 @@ body {
 .menu-buttons {
   height: 50px;
   width: 200px;
-  background-color: #04aa6d;
+  background-color: #55af8e;
   border-radius: 15px;
   font-size: 18px;
   box-shadow: 2px 6px 6px 1px black;
@@ -69,7 +69,13 @@ body {
   overflow: hidden;
 }
 
+#season-names {
+  border-radius: 10px;
+  box-shadow: 2px 5px 5px 1px black;
+}
+
 .calc-labels {
+  width: 35%;
   font-size: 24px;
 }
 
@@ -77,6 +83,8 @@ body {
   width: 15%;
   font-size: 20px;
   text-align: center;
+  border-radius: 10px;
+  box-shadow: 2px 5px 5px 1px black;
 }
 
 .table-calc {
@@ -120,12 +128,13 @@ body {
 }
 
 #crop-page {
+  border-radius: 15px;
   width: 75%;
   height: 100%;
   overflow: hidden;
   margin: 0 auto;
-  border: 1px solid red;
   transition-duration: 600ms;
+  box-shadow: 2px 15px 15px 1px black;
 }
 
 .sidebar {
