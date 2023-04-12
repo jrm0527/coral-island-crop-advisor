@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="content-container">
-      <div id="calc-page">
+      <div class="hidden" id="calc-page">
         <div id="calc-content">
           <div id="calc-settings">
             <label class="calc-labels" for="seasons">Current season:</label>
@@ -56,116 +56,98 @@
             <button class="menu-buttons" id="run-calc">RUN</button>
           </div>
           <div class="container" id="table-container">
-            <table class="table">
+            <table class="table-calc">
               <tbody class="text-center" id="item-table"></tbody>
             </table>
           </div>
         </div>
       </div>
-      <div class="hidden" id="crop-page">
+      <div id="crop-page">
         <div id="crop-content">
           <div class="sidebar">
-            <button class="sidebar-buttons" id="add-crop">Add Crop</button>
-            <button class="sidebar-buttons" id="update-crop">
-              Update Crop
-            </button>
-            <button class="sidebar-buttons" id="delete-crop">
-              Delete Crop
-            </button>
-            <button class="sidebar-buttons" id="next-crop">Next Crop</button>
-            <button class="sidebar-buttons" id="prev-crop">Previous Crop</button
-            ><button class="sidebar-buttons" id="clear-crop">Clear Crop</button>
+            <button class="menu-buttons" id="add-crop">Add Crop</button>
+            <br />
+            <br />
+            <button class="menu-buttons" id="update-crop">Update Crop</button>
+            <br />
+            <br />
+            <button class="menu-buttons" id="delete-crop">Delete Crop</button>
+            <br />
+            <br />
+            <button class="menu-buttons" id="next-crop">Next Crop</button>
+            <br />
+            <br />
+            <button class="menu-buttons" id="prev-crop">Previous Crop</button>
+            <br />
+            <br />
+            <button class="menu-buttons" id="clear-crop">Clear Crop</button>
           </div>
-          <div class="container" id="table-container">
-            <label for="cropName">Crop Name: </label>
-            <input type="text" class="input-text" id="cropName" />
-            <label for="growthTime">Growth Time: </label>
-            <input type="text" class="input-text" id="growthTime" />
-            <label for="regrowthTime">Regrowth Time: </label>
-            <input type="text" class="input-text" id="regrowthTime" />
-            <label for="seedPrice">Seed Price: </label>
-            <input type="text" class="input-text" id="seedPrice" />
-            <label for="sellPrice">Sell Price: </label>
-            <input type="text" class="input-text" id="sellPrice" />
-            <label for="season">Season: </label>
-            <input type="text" class="input-text" id="season" />
+          <div class="container" id="crop-table">
+            <table class="table-crops">
+              <tbody class="text-center" id="crop-table">
+                <tr>
+                  <td>
+                    <label class="crop-labels" for="cropName"
+                      >Crop Name:
+                    </label>
+                  </td>
+                  <td>
+                    <input type="text" class="input-text" id="cropName" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="crop-labels" for="growthTime"
+                      >Growth Time:
+                    </label>
+                  </td>
+                  <td>
+                    <input type="text" class="input-text" id="growthTime" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="crop-labels" for="regrowthTime"
+                      >Regrowth Time:
+                    </label>
+                  </td>
+                  <td>
+                    <input type="text" class="input-text" id="regrowthTime" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="crop-labels" for="seedPrice"
+                      >Seed Price:
+                    </label>
+                  </td>
+                  <td>
+                    <input type="text" class="input-text" id="seedPrice" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="crop-labels" for="sellPrice"
+                      >Sell Price:
+                    </label>
+                  </td>
+                  <td>
+                    <input type="text" class="input-text" id="sellPrice" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="crop-labels" for="season">Season: </label>
+                  </td>
+                  <td>
+                    <input type="text" class="input-text" id="season" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="footer-wrapper">
-      <div class="footer">
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-      </div>
-    </div>
-
-    <!-- <div class="text-center">
-      <h1 class="header-text">CORAL ISLAND FARMER'S ALMANAC</h1>
-    </div>
-    <div class="row text-center h-100 justify-content-center">
-      <div class="col-3 align-self-center">
-        <button class="btn btn-lg btn-primary" id="run">Run</button>
-      </div>
-    </div>
-    <div class="container" id="table-container">
-      <table class="table table-bordered table-responsive">
-        <tbody class="text-center" id="item-table"></tbody>
-      </table>
-    </div>
-    <div class="flex h-100">
-      <div class="col-6">
-        <label for="cropName">Crop Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="cropName"
-          placeholder="Enter Crop Name"
-        />
-      </div>
-      <div class="col-6">
-        <label for="growthTime">Growth Time</label>
-        <input
-          type="text"
-          class="form-control"
-          id="growthTime"
-          placeholder="Enter Growth Time"
-        />
-      </div>
-      <div class="col-6">
-        <label for="seedPrice">Seed Price</label>
-        <input
-          type="text"
-          class="form-control"
-          id="seedPrice"
-          placeholder="Enter Seed Price"
-        />
-      </div>
-      <div class="col-6">
-        <label for="sellPrice">Sell Price</label>
-        <input
-          type="text"
-          class="form-control"
-          id="sellPrice"
-          placeholder="Enter Sell Price"
-        />
-      </div>
-      <div class="col-6">
-        <label for="season">Season</label>
-        <input
-          type="text"
-          class="form-control"
-          id="season"
-          placeholder="Enter Season"
-        />
-      </div>
-    </div>
-    <div class="row text-center h-100">
-      <div class="col-3">
-        <button class="btn btn-lg btn-primary" id="submit">Submit</button>
-      </div>
-    </div> -->
   </body>
 </html>

@@ -7,6 +7,13 @@ body {
   align-content: center;
 }
 
+#title-text {
+  text-align: center;
+  font-family: "Londrina Solid", cursive;
+  color: coral;
+  font-size: 35px;
+}
+
 #button-container {
   text-align: center;
 }
@@ -23,6 +30,7 @@ body {
   background-color: #04aa6d;
   border-radius: 15px;
   font-size: 18px;
+  box-shadow: 2px 6px 6px 1px black;
 }
 
 .content-container {
@@ -35,11 +43,13 @@ body {
 }
 
 #calc-page {
+  border-radius: 15px;
   width: 75%;
   height: 100%;
   overflow: hidden;
   margin: 0 auto;
   transition-duration: 600ms;
+  box-shadow: 2px 15px 15px 1px black;
 }
 
 #calc-content {
@@ -69,7 +79,8 @@ body {
   text-align: center;
 }
 
-.table {
+.table-calc {
+  width: 50%;
   padding-top: 2%;
   margin: 0 auto;
 }
@@ -89,9 +100,16 @@ body {
   font-size: 28px;
 }
 
-td {
+.crop-name {
   font-size: 28px;
   text-align: left;
+  border: 1px black solid;
+  background-color: #d2e3f3;
+}
+
+.profit {
+  font-size: 28px;
+  text-align: center;
   border: 1px black solid;
   background-color: #d2e3f3;
 }
@@ -112,9 +130,11 @@ td {
 
 .sidebar {
   float: left;
+  padding-top: 2%;
+  padding-bottom: 22%;
+  text-align: center;
   width: 20%;
   height: 100%;
-  align-items: center;
   overflow: hidden;
 }
 
@@ -130,6 +150,28 @@ td {
   background-color: #f5cf8e; /* Yellow */
 }
 
+.table-crops {
+  width: 50%;
+  padding-top: 2%;
+  margin: 0 auto;
+}
+
+#crop-table {
+  padding-top: 5%;
+  align-self: center;
+}
+
+.crop-labels {
+  text-align: right;
+  width: 99%;
+  font-size: 24px;
+}
+
+.input-text {
+  width: 70%;
+  font-size: 24px;
+}
+
 .footer {
   height: 100%;
   position: relative;
@@ -141,35 +183,16 @@ td {
   bottom: 0;
   overflow: hidden;
   border: 1px solid orange;
-  /* background-color: #d6e9fe; */
 }
-
-/* .column {
-  float: left;
-  width: 31%;
-  margin: 20px 1.15%;
-  height: 160px;
-  background-color: #b2d6ff;
-} */
 
 .content {
   padding: 20px;
 }
 
-#title-text {
-  text-align: center;
-  font-family: "Londrina Solid", cursive;
-  color: coral;
-}
-
 label {
   display: inline-block;
-  width: 150px;
+  width: 10%;
   text-align: right;
-}
-
-.input-text {
-  width: 60%;
 }
 
 #crop-content.hidden {
