@@ -36,7 +36,7 @@ app.get("/api/crops/:cropSeason", async (req, res, next) => {
   let cropSeason = req.params.cropSeason;
   try {
     const query = {
-      text: "SELECT * FROM crop WHERE season = $1 RETURNING *",
+      text: "SELECT * FROM crop WHERE season = $1",
       values: [cropSeason],
     };
     const pool = new Pool({ connectionString: process.env.DATABASE_URL });

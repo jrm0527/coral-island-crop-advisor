@@ -2,7 +2,7 @@
 GET http://localhost:8000/api/crops
 
 ###
-GET http://localhost:8000/api/crops/spring
+GET http://localhost:8000/api/crops/Spring
 
 ### delete a crop
 DELETE http://localhost:8000/api/crops/61
