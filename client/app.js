@@ -27,7 +27,7 @@ function cropCalc() {
 }
 
 function calculateCrops() {
-  const season = $("#season-names option:selected").text().toLowerCase();
+  const season = $("#season-names option:selected").text();
   const day = $("#input-day").val();
   $("#item-table").empty();
   $.get(`/api/crops/${season}`, (data) => {
@@ -101,6 +101,7 @@ function addCrop() {
     data: JSON.stringify(newCrop),
     contentType: "application/json",
     success: function (result) {
+      alert(`${newCrop.name} has been added!`);
       showCrops();
     },
   });
@@ -123,6 +124,7 @@ function updateCrop() {
     data: JSON.stringify(updatedCrop),
     contentType: "application/json",
     success: function (result) {
+      alert(`${updatedCrop.name} has been updated!`);
       showCrops();
     },
   });
@@ -134,6 +136,7 @@ function deleteCrop() {
     url: `/api/crops/${cropId}`,
     type: "DELETE",
     success: function (result) {
+      alert(`${cropArray[index].name} has been deleted!`);
       showCrops();
     },
   });

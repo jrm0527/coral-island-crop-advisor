@@ -110,16 +110,20 @@ body {
 
 .crop-name {
   font-size: 28px;
+  border-radius: 5px;
+  color: rgb(106, 28, 0);
   text-align: left;
   border: 1px black solid;
-  background-color: #d2e3f3;
+  background-color: #b99c71;
 }
 
 .profit {
   font-size: 28px;
+  border-radius: 5px;
+  color: rgb(106, 28, 0);
   text-align: center;
   border: 1px black solid;
-  background-color: #d2e3f3;
+  background-color: #b99c71;
 }
 
 #crop-page.hidden {
@@ -172,26 +176,17 @@ body {
 
 .crop-labels {
   text-align: right;
+  color: rgb(106, 28, 0);
   width: 99%;
   font-size: 24px;
 }
 
 .input-text {
+  color: rgb(106, 28, 0);
   width: 70%;
   font-size: 24px;
-}
-
-.footer {
-  height: 100%;
-  position: relative;
-  border: 1px solid green;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  overflow: hidden;
-  border: 1px solid orange;
+  border-radius: 5px;
+  background-color: #b99c71;
 }
 
 .content {

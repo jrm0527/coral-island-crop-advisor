@@ -35,10 +35,12 @@ app.get("/api/crops", async (req, res, next) => {
 app.get("/api/crops/:cropSeason", async (req, res, next) => {
   let cropSeason = req.params.cropSeason;
   try {
+    const query = {
+      text: "SELECT * FROM crop WHERE season = $1 RETURNING *",
+      values: [cropSeason],
+    };
     const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-    const { rows } = await pool.query(
-      `SELECT * FROM crop WHERE season = '${cropSeason}'`
-    );
+    const { rows } = await pool.query(query);
     res.send(rows);
     pool.end();
   } catch (err) {
