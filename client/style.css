@@ -170,7 +170,7 @@ body {
 }
 
 #crop-table {
-  padding-top: 5%;
+  padding-top: 3%;
   align-self: center;
 }
 
@@ -178,13 +178,13 @@ body {
   text-align: right;
   color: rgb(106, 28, 0);
   width: 99%;
-  font-size: 24px;
+  font-size: 38px;
 }
 
 .input-text {
   color: rgb(106, 28, 0);
-  width: 70%;
-  font-size: 24px;
+  width: 80%;
+  font-size: 38px;
   border-radius: 5px;
   background-color: #b99c71;
 }

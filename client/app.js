@@ -147,6 +147,11 @@ function deleteCrop() {
     success: function (result) {
       alert(`${cropArray[index].name} has been deleted!`);
       showCrops();
+      if (index < cropArray.length - 1) {
+        nextCrop();
+      } else {
+        previousCrop();
+      }
     },
   });
 }
