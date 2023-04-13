@@ -17,7 +17,7 @@ Content-Type: application/json
     "regrowth_time": 1,
     "seed_price": 50,
     "sell_price": 20,
-    "season": "spring"
+    "season": "Spring"
 }
 
 ### update a crop
@@ -30,6 +30,6 @@ Content-Type: application/json
     "regrowth_time": 1,
     "seed_price": 50,
     "sell_price": 25,
-    "season": "spring"
+    "season": "Spring"
 }
 

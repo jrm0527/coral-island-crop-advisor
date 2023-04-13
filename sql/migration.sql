@@ -2,11 +2,11 @@ DROP TABLE crop;
 
 CREATE TABLE crop (
     id serial PRIMARY KEY,
-    name varchar(30),
-    growth_time int,
-    regrowth boolean,
-    regrowth_time int,
-    seed_price int,
-    sell_price int,
-    season varchar (30)
+    name varchar(30) NOT NULL,
+    growth_time int NOT NULL,
+    regrowth boolean DEFAULT false,
+    regrowth_time int DEFAULT 0,
+    seed_price int NOT NULL,
+    sell_price in NOT NULLt,
+    season varchar (30) NOT NULL
 )
