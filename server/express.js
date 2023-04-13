@@ -76,6 +76,7 @@ app.post("/api/crops", async (req, res, next) => {
     }
     pool.end();
   } catch (error) {
+    alert(error.message);
     next({ status: 400, message: error.message });
   }
 });

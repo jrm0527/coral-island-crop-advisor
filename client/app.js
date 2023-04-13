@@ -94,6 +94,16 @@ function addCrop() {
     sell_price: Number($("#sellPrice").val()),
     season: $("#season").val(),
   };
+  if (
+    !newCrop.name ||
+    !newCrop.growth_time ||
+    !newCrop.seed_price ||
+    !newCrop.sell_price ||
+    !newCrop.season
+  ) {
+    alert("Missing required fields. Try again!");
+    return;
+  }
   index = cropArray.length;
   $.ajax({
     url: `/api/crops/`,
@@ -109,7 +119,6 @@ function addCrop() {
 
 function updateCrop() {
   let cropId = cropArray[index].id;
-  console.log(cropId);
   let updatedCrop = {
     name: $("#cropName").val(),
     growth_time: Number($("#growthTime").val()),
