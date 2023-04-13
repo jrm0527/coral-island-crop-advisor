@@ -61,7 +61,7 @@ body {
 
 #calc-settings {
   float: left;
-  padding-top: 2%;
+  padding-top: 4%;
   padding-bottom: 22%;
   text-align: center;
   width: 25%;
@@ -115,6 +115,7 @@ body {
   text-align: left;
   border: 1px black solid;
   background-color: #b99c71;
+  padding-left: 5px;
 }
 
 .profit {
@@ -187,6 +188,7 @@ body {
   font-size: 38px;
   border-radius: 5px;
   background-color: #b99c71;
+  padding-left: 5px;
 }
 
 .content {
